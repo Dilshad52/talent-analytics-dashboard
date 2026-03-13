@@ -7,7 +7,7 @@ st.set_page_config(page_title="Talent Analytics", layout="wide")
 st.title("🎯 My First Talent Dashboard")
 
 # Load data
-df = pd.read_csv('data/employee_data.csv')
+df = pd.read_csv('employee_data.csv')
 
 # Show raw data
 st.subheader("📋 Employee Data")
@@ -46,4 +46,5 @@ selected_dept = st.selectbox("Select Department", df['department'].unique())
 # Show filtered data
 filtered_df = df[df['department'] == selected_dept]
 st.write(f"Showing {len(filtered_df)} employees from {selected_dept}")
+
 st.dataframe(filtered_df)
